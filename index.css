@@ -1,0 +1,81 @@
+/* html {
+  display: flex;
+  flex-direction: row;
+} */
+
+/* body { 
+  display: flex;
+} */
+
+.main {
+  display: flex;
+  width: 100vw;
+}
+
+.toolbar {
+  height: 80vh;
+  width: 15vw; 
+  background-color: lightgrey;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  /* align-items: center; */
+  /* justify-items: center; */
+}
+
+.remaining {
+  height: 45vh;
+  width: 15vw;
+}
+
+.tools { 
+  width: 7vw; 
+  height: 7vw;
+}
+
+#graffiti_wall {
+  height: 80vh;
+  width: 85vw;
+}
+
+.palette { 
+  height: 20vh;
+  width: 100vw;
+  /* background-color: lightgrey; */
+  background-color: tan;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.colors {
+  /* height: 100%; */
+  width: 50vw;
+}
+
+.red {
+  width: 5vh;
+  height: 5vh; 
+  background-color: red;
+}
+
+.blue {
+  width: 5vh; 
+  height: 5vh; 
+  background-color: blue;
+}
+
+.yellow {
+  width: 5vh; 
+  height: 5vh;
+  background-color: yellow; 
+}
+
+.green { 
+  width: 5vh; 
+  height: 5vh;
+  background-color: green; 
+}
