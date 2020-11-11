@@ -34,7 +34,7 @@ body {
 }
 
 .remaining {
-  height: 45vh;
+  height: 25vh;
   width: 15vw;
 }
 
@@ -43,10 +43,10 @@ body {
   height: 7vw;
 }
 
-#graffiti_wall {
+/* #graffiti_wall {
   height: 80vh;
   width: 85vw;
-}
+} */
 
 .palette { 
   height: 20vh;

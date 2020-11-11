@@ -17,9 +17,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // mouse.y = graffitiWall.height - this.offsetTop; 
   }, false); 
 
-  ctx.lineWidth = 3; 
-  ctx.lineJoin = 'round'; 
+  ctx.lineWidth = 5; 
+  // ctx.lineJoin = 'round'; 
+  // ctx.lineJoin = 'miter'; 
+  ctx.lineJoin = 'bevel'; 
   ctx.lineCap = 'round'; 
+  // ctx.lineCap = 'butt'; 
   ctx.strokeStyle = 'black'; 
 
   graffitiWall.addEventListener('mousedown', function(e) {
@@ -36,6 +39,16 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke(); 
   }
+
+  document.getElementById("clearBoard").onclick = function() {
+    ctx.clearRect(0, 0, graffitiWall.width, graffitiWall.height);
+  };
+
+  // const clearBoard = document.getElementById("clearBoard"); 
+  // clearBoard.onsubmit = function() {
+  //   alert('hello');
+  //   // ctx.clearRect(0, 0, graffitiWall.width, graffitiWall.height);
+  // }
 
 
 });
