@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // mouse.y = graffitiWall.height - this.offsetTop; 
   }, false); 
 
+  
   ctx.lineWidth = 5; 
   // ctx.lineJoin = 'round'; 
   // ctx.lineJoin = 'miter'; 
@@ -24,6 +25,19 @@ document.addEventListener("DOMContentLoaded", function() {
   ctx.lineCap = 'round'; 
   // ctx.lineCap = 'butt'; 
   ctx.strokeStyle = 'black'; 
+
+  document.getElementById("red").onclick = function() {
+    ctx.strokeStyle = 'red'; 
+  }
+  document.getElementById("blue").onclick = function() {
+    ctx.strokeStyle = 'blue'; 
+  }
+  document.getElementById("yellow").onclick = function() {
+    ctx.strokeStyle = 'yellow'; 
+  }
+  document.getElementById("green").onclick = function() {
+    ctx.strokeStyle = 'green'; 
+  }
 
   graffitiWall.addEventListener('mousedown', function(e) {
     ctx.beginPath(); 
