@@ -3,9 +3,20 @@
   flex-direction: row;
 } */
 
-/* body { 
-  display: flex;
-} */
+body { 
+  margin: 0;
+  padding: 0; 
+}
+
+#content {
+  /* width: 800px; */
+  width: 85vw;
+  /* height: 500px; */
+  height: 80vh;
+  margin: 0 auto;
+  /* margin-top: 50px;  */
+  border: 1px dotted black; 
+}
 
 .main {
   display: flex;
@@ -20,8 +31,6 @@
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  /* align-items: center; */
-  /* justify-items: center; */
 }
 
 .remaining {
@@ -42,12 +51,10 @@
 .palette { 
   height: 20vh;
   width: 100vw;
-  /* background-color: lightgrey; */
   background-color: tan;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-items: center;
+  align-content: center;
 
 }
 
@@ -79,3 +86,31 @@
   height: 5vh;
   background-color: green; 
 }
+
+.box {
+  height: 18vh;
+  width: 18vh;
+  background-color: beige;
+}
+
+.swatch1 {
+  border: 1px solid black;
+  /* background-color: black; */
+  background-color: red;
+  background-color: blue;
+  background-color: yellow;
+  background-color: green;
+  width: 8vh;
+  height: 8vh;
+  margin-left: .5vh;
+  margin-top: .5vh;
+  margin-left: 2vh;
+  /* margin-top: 2vh; */
+}
+.swatch2 {
+  border: 1px solid black; 
+  width: 8vh;
+  height: 8vh;
+  margin-left: 9vh;
+}
+
