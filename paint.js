@@ -28,16 +28,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("red").onclick = function() {
     ctx.strokeStyle = 'red'; 
+    document.getElementById("swatch1").style.backgroundColor = "red";
+
   }
   document.getElementById("blue").onclick = function() {
     ctx.strokeStyle = 'blue'; 
+    document.getElementById("swatch1").style.backgroundColor = "blue";
   }
   document.getElementById("yellow").onclick = function() {
     ctx.strokeStyle = 'yellow'; 
+    document.getElementById("swatch1").style.backgroundColor = "yellow";
   }
   document.getElementById("green").onclick = function() {
     ctx.strokeStyle = 'green'; 
+    document.getElementById("swatch1").style.backgroundColor = "green";
   }
+  
 
   graffitiWall.addEventListener('mousedown', function(e) {
     ctx.beginPath(); 
@@ -56,7 +62,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("clearBoard").onclick = function() {
     ctx.clearRect(0, 0, graffitiWall.width, graffitiWall.height);
+    ctx.strokeStyle = 'black'; 
+    document.getElementById("swatch1").style.backgroundColor = "black";
+
   };
+
 
   // const clearBoard = document.getElementById("clearBoard"); 
   // clearBoard.onsubmit = function() {

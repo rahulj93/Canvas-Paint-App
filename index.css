@@ -96,10 +96,11 @@ body {
 .swatch1 {
   border: 1px solid black;
   /* background-color: black; */
-  background-color: red;
-  background-color: blue;
-  background-color: yellow;
-  background-color: green;
+  /* background-color: red; */
+  /* background-color: blue; */
+  /* background-color: yellow; */
+  /* background-color: green; */
+  background-color: black;
   width: 8vh;
   height: 8vh;
   margin-left: .5vh;
