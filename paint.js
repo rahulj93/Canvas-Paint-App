@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("swatch1").style.backgroundColor = "white";
     document.getElementById("default").style.backgroundColor = "white";
     document.getElementById('canvasImg').style.backgroundColor = "black";
+    document.getElementById('canvasImg').style.color = "white";
   }
 
 
