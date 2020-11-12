@@ -26,7 +26,8 @@ body {
 .toolbar {
   height: 80vh;
   width: 15vw; 
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
+  background-color: black;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -34,13 +35,21 @@ body {
 }
 
 .remaining {
-  height: 25vh;
+  height: 5vh;
   width: 15vw;
 }
 
 .tools { 
   width: 7vw; 
   height: 7vw;
+  font-size: larger;
+  /* font-size: 50px; */
+  /* background-color: black; */
+  /* color: whitesmoke; */
+}
+
+img {
+  background-color: white;
 }
 
 /* #graffiti_wall {
@@ -51,10 +60,11 @@ body {
 .palette { 
   height: 20vh;
   width: 100vw;
-  background-color: tan;
+  /* background-color: tan; */
+  background-color:black;
   display: flex;
-  justify-items: center;
-  align-content: center;
+  /* justify-items: center; */
+  /* align-content: center; */
 
 }
 
@@ -88,8 +98,10 @@ body {
 }
 
 .box {
+  /* height: 15vw; */
+  margin-top: 1vh;
   height: 18vh;
-  width: 18vh;
+  width: 15vw;
   background-color: beige;
 }
 
@@ -115,3 +127,7 @@ body {
   margin-left: 9vh;
 }
 
+#canvasImg {
+  width: 15vw; 
+  object-fit: contain;
+}

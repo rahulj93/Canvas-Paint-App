@@ -2,6 +2,10 @@
   <head>
     <title>Graffiti Wall</title>
     <link type="text/css" rel="stylesheet" href="index.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   </head>
   <body>
@@ -12,14 +16,32 @@
     </div> 
     <div class="main">
       <div class="toolbar">
-        <button class="tools">paintbrush</button>
-        <button class="tools">paintbucket</button>
-        <button class="tools">shape: circle</button>
-        <button class="tools">shape: square</button>
-        <button class="tools">line</button>
-        <button class="tools"> save icon</button>
-        <button class="tools" id="clearBoard"> clear all</button>
+        <button class="tools"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
+        <button class="tools"><span class="iconify" data-icon="foundation-paint-bucket" data-inline="false"></span></button>
+        <button class="tools" style='font-size: 50px;'>&#9675; 
+          <!-- <i class="fa fa-circle-thin"></i>  -->
+        </button>
+        <button class="tools" style='font-size: 50px;'>&#x25A1;
+          <!-- &#9633; -->
+          <!-- &#11200; -->
+          <!-- &#x2BC0; -->
+          <!-- <i class="fa fa-square-o" aria-hidden="true"></i> -->
+        </button>
+        <!-- <button class="tools">/ line____ </button> -->
+          <button class="tools" id="eraser"><i class="fa fa-eraser"></i>Eraser </button>
+          <button class="tools" id="save"> 
+          <i class="fa fa-camera" aria-hidden="true"></i>
+          <!-- <i class="icon-screenshot">  -->
+        <!-- </i><i class='fas fa-save'></i>  -->
+        Snapshot</button>
         <div class="remaining"></div>
+        <img id="canvasImg" alt="Right click to save this snapshot!">
+        <!-- <a href="path/to/file" download>Click here to download</a> -->
+        <div class="remaining"></div>
+        <button class="tools" id="download">
+          </i><i class='fas fa-save'></i> Save     
+        </button>
+        <button class="tools" id="clearBoard"> <i class="fa fa-bomb" aria-hidden="true"></i>reset</button>
       </div>
       <div id="content">
         <canvas id="graffiti_wall"></canvas>
@@ -29,14 +51,20 @@
     <footer class="palette"> 
       <div class="box">
         <div class="swatch1" id="swatch1"></div>
-        <div class="swatch2"></div>
+        <div class="swatch2"><i class="fa fa-paint-brush" aria-hidden="true"></i><i class="fa fa-eraser"></i></div>
       </div>
       <div class="colors">
         <button class="red" id="red"></button>
         <button class="blue" id="blue"> </button>
         <button class="yellow" id="yellow"> </button>
         <button class="green" id="green"> </button>
+        <button class="tools" id="brushSize"> Brush size </button>
+        <input class="tools" type="number"></input>
+        <button class="tools" id="eraserSize"> Eraser size </button>
+        <input class="tools" type="number"></input>
       </div> 
+      <button class="tools" id="lightMode"> Light Mode </button>
+      <button class="tools" id="darkMode"> Dark Mode </button>
     </footer>
   </body> 
 </html>

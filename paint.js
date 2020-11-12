@@ -43,7 +43,25 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.strokeStyle = 'green'; 
     document.getElementById("swatch1").style.backgroundColor = "green";
   }
-  
+
+  document.getElementById("save").onclick = function() {
+    // ctx.save(); 
+    alert("ayooo save this! "); 
+    let dataURL = graffitiWall.toDataURL(); 
+    console.log(dataURL);
+    document.getElementById('canvasImg').src = dataURL;
+    // let canvas = document.getElementById("graffiti_wall"); 
+    // document.getElementById("graffiti_wall").src = canvas.toDataURL(); 
+    // Canvas2Image.saveAsPNG(canvas); 
+  }
+  document.getElementById("download").onclick = function() {
+    window.open(graffitiWall.toDataURL('image/png')); 
+    var gh = graffitiWall.toDataURL('png');
+    var a = document.createElement('a'); 
+    a.href = gh; 
+    a.download = 'image.png'; 
+    a.click(); 
+  }
 
   graffitiWall.addEventListener('mousedown', function(e) {
     ctx.beginPath(); 
@@ -61,11 +79,17 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.getElementById("clearBoard").onclick = function() {
+    alert("Don't forget to save your work!")
     ctx.clearRect(0, 0, graffitiWall.width, graffitiWall.height);
     ctx.strokeStyle = 'black'; 
     document.getElementById("swatch1").style.backgroundColor = "black";
 
   };
+
+  document.getElementById("eraser").onclick = function() {
+    ctx.strokeStyle = "white"; 
+    document.body.style.cursor = "crosshair";
+  }
 
 
   // const clearBoard = document.getElementById("clearBoard"); 
