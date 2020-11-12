@@ -7,6 +7,15 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+    <script src="https://unpkg.com/kursor"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kursor"></script>
+    <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+
+    <!-- <script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+    <script src="https://webglfundamentals.org/webgl/resources/m3.js"></script> -->
+
   </head>
   <body>
     <div class="altMenu">
@@ -16,28 +25,17 @@
       <h1>Graffiti Wall</h1>
     </div> 
     <div class="main">
-      <div class="toolbar">
-        <button class="tools"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
-        <button class="tools"><span class="iconify" data-icon="foundation-paint-bucket" data-inline="false"></span></button>
-        <button class="tools" style='font-size: 50px;'>&#9675; 
-          <!-- <i class="fa fa-circle-thin"></i>  -->
-        </button>
-        <button class="tools" style='font-size: 50px;'>&#x25A1;
-          <!-- &#9633; -->
-          <!-- &#11200; -->
-          <!-- &#x2BC0; -->
-          <!-- <i class="fa fa-square-o" aria-hidden="true"></i> -->
-        </button>
+      <div class="toolbar" id="toolbar">
+        <button class="tools" id="paintBrush"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
+        <!-- <button class="tools"><span class="iconify" data-icon="foundation-paint-bucket" data-inline="false"></span></button> -->
+        <!-- <button class="tools" style='font-size: 50px;'>&#9675;</button>
+        <button class="tools" style='font-size: 50px;'>&#x25A1;</button> -->
         <!-- <button class="tools">/ line____ </button> -->
-          <button class="tools" id="eraser"><i class="fa fa-eraser"></i>
-            
+          <!-- <button class="tools" id="eraser"><i class="fa fa-eraser"></i>
           <p style="font-size: small;">Eraser</p>
-
-          </button>
-          <button class="tools" id="save"> 
+          </button> -->
+          <button class="tools" id="screenshot"> 
           <i class="fa fa-camera" aria-hidden="true"></i>
-          <!-- <i class="icon-screenshot">  -->
-        <!-- </i><i class='fas fa-save'></i>  -->
           <p style="font-size: small;">Snapshot</p>
             
         </button>
@@ -57,19 +55,24 @@
         <canvas id="graffiti_wall"></canvas>
       </div>
       <script type="application/javascript" src="paint.js"></script> 
+      <div class="toolbar" id="toolbar">
+        <button class="tools" id="lightMode"> Light Mode </button>
+        <div style="height: 200px"></div>
+      <button class="tools" id="darkMode"> Dark Mode </button></div>
     </div>
     <footer class="palette"> 
-      <div class="box">
-        <div class="swatch1" id="swatch1"></div>
-        <button class="swatch2" id="black"></button>
+      <div class="box" id="swatch1">
+        <button class="swatch2" id="default" style="color:blue">Click to restore default color</button>
         <!-- <div class="swatch2"><i class="fa fa-paint-brush" aria-hidden="true"></i><i class="fa fa-eraser"></i></div> -->
       </div>
+      <div style="width: 20vw;"></div>
       <div class="colors">
           <label style="color: white"> Pick a paint color:
         <button class="red" id="red"></button>
         <button class="blue" id="blue"> </button>
         <button class="yellow" id="yellow"> </button>
         <button class="green" id="green"> </button>
+        </label>
         <br></br> 
 
           <label style="color: white"> Pick a brush size: 
@@ -78,42 +81,9 @@
             <button id="largeBrush">Large</button>
           </label>
 
-          <!-- <form name="brushSizeForm" onsubmit="setBrushSize()">
-            <label style="color: white"> Pick a brush size: 
-              <select name="brushSize" id="brushSize">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-              </select>
-            </label>
-            <input type="submit" value="Submit"> 
-          </form> -->
           <br></br> 
-          
-          <label style="color: white"> Pick an eraser size: 
-            <button id="smallEraser">Small</button>
-            <button id="mediumEraser">Medium</button>
-            <button id="largeEraser">Large</button>
-          </label>
 
-        <!-- <label style="color: white"> Pick an eraser size: 
-          <select name="eraserSize" id="eraserSize">
-            <option value="1">Small</option>
-            <option value="2">Medium</option>
-            <option value="3">Large</option>
-          </select>
-        </label> -->
-
-        <!-- <button class="tools" id="brushSize"> Brush size </button>
-        <input class="tools" type="number"></input> -->
-
-        <!-- <button class="tools" id="eraserSize"> Eraser size </button>
-        <input class="tools" type="number"></input> -->
       </div> 
-      <button class="tools" id="lightMode"> Light Mode </button>
-      <div style="width: 100px"></div>
-      <!-- <div style="width: 20px"></div> -->
-      <button class="tools" id="darkMode"> Dark Mode </button>
     </footer>
   </body> 
 </html>

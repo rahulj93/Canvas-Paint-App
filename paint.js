@@ -1,12 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
   const graffitiWall = document.getElementById("graffiti_wall"); 
-
+  // graffitiWall.width = window.innerWidth;
+  // graffitiWall.height = window.innerHeight;
   const ctx = graffitiWall.getContext("2d"); 
 
   let painting = document.getElementById("content"); 
   let paintStyle = getComputedStyle(painting);
   graffitiWall.width = parseInt(paintStyle.getPropertyValue("width")); 
   graffitiWall.height = parseInt(paintStyle.getPropertyValue("height")); 
+
+  document.getElementById("paintBrush").onclick = function() {
+    new kursor({
+      // type: 5,
+      type: 2,
+      removeDefaultCursor: true,
+      // color: "#000000"
+      color: "#000000"
+    })
+  }
 
   let mouse = {x: 0, y: 0}; 
 
@@ -26,10 +37,21 @@ document.addEventListener("DOMContentLoaded", function() {
   // ctx.lineCap = 'butt'; 
   ctx.strokeStyle = 'black'; 
   
-  document.getElementById("black").onclick = function() {
-    ctx.strokeStyle = 'black'; 
-    document.getElementById("swatch1").style.backgroundColor = "black";
-  }
+  document.getElementById("default").onclick = function() {
+    let color = document.getElementById("default").style.backgroundColor;
+    console.log(color);
+    // ctx.strokeStyle = color.toString(); 
+    document.getElementById("swatch1").style.backgroundColor = color;  
+
+    // if (color === "black") {
+    //   ctx.strokeStyle = 'black'; 
+    // } 
+    // if (color === 'white') {
+    //   ctx.strokeStyle = 'white'; 
+    // }
+    (color === "black") ? (ctx.strokeStyle = 'black') : (ctx.strokeStyle = 'white'); 
+    (color === "white") ? (ctx.strokeStyle = 'white') : (ctx.strokeStyle = 'black'); 
+    }
 
   document.getElementById("red").onclick = function() {
     ctx.strokeStyle = 'red'; 
@@ -49,11 +71,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("swatch1").style.backgroundColor = "green";
   }
 
-  document.getElementById("save").onclick = function() {
+  document.getElementById("screenshot").onclick = function() {
     // ctx.save(); 
-    alert("ayooo save this! "); 
     let dataURL = graffitiWall.toDataURL(); 
-    console.log(dataURL);
     document.getElementById('canvasImg').src = dataURL;
     document.getElementById('canvasImg').style.border ="black";
     // let canvas = document.getElementById("graffiti_wall"); 
@@ -89,24 +109,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.clearRect(0, 0, graffitiWall.width, graffitiWall.height);
     ctx.strokeStyle = 'black'; 
     document.getElementById("swatch1").style.backgroundColor = "black";
-
   };
 
-  document.getElementById("eraser").onclick = function() {
-    ctx.strokeStyle = "white"; 
-    document.body.style.cursor = "crosshair";
-  }
-
-
-  // const clearBoard = document.getElementById("clearBoard"); 
-  // clearBoard.onsubmit = function() {
-  //   alert('hello');
-  //   // ctx.clearRect(0, 0, graffitiWall.width, graffitiWall.height);
-  // }
-
   // document.getElementById("brushSize").onsubmit = function() {
-
-
   // let form = document.getElementById("brushSize");
   // function handleForm(e) { 
   //   e.preventDefault(); 
@@ -115,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   document.getElementById("smallBrush").onclick = function() {
+    document.body.style.cursor = "auto";
     ctx.lineWidth = 1; 
   }
   document.getElementById("mediumBrush").onclick = function() {
@@ -124,21 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.lineWidth = 9; 
   }
 
-  document.getElementById("smallEraser").onclick = function() {
-    ctx.strokeStyle = "white";
-    document.body.style.cursor = "crosshair";
-    ctx.lineWidth = 1; 
-  }
-  document.getElementById("mediumEraser").onclick = function() {
-    ctx.strokeStyle = "white";
-    document.body.style.cursor = "crosshair";
-    ctx.lineWidth = 5; 
-  }
-  document.getElementById("largeEraser").onclick = function() {
-    ctx.strokeStyle = "white";
-    document.body.style.cursor = "crosshair";
-    ctx.lineWidth = 9; 
-  }
 
 // setBrushSize = () => {
 //   // e.preventDefault();
@@ -159,7 +150,44 @@ document.addEventListener("DOMContentLoaded", function() {
 //       ctx.lineWidth = 5; 
 //     }
 //     return false; 
-// }
+// // }
+
+  window.onresize = function () {
+//     // alert("ayo don't do that");
+    let painting = document.getElementById("content");
+    let paintStyle = getComputedStyle(painting);
+    graffitiWall.width = parseInt(paintStyle.getPropertyValue("width"));
+    graffitiWall.height = parseInt(paintStyle.getPropertyValue("height")); 
+    ctx.lineWidth = 5; 
+
+//     // ctx.scale(graffitiWall.width, graffitiWall.height);
+//     // var graffitiWall = document.getElementById('graffiti_wall');
+//     // graffitiWall.width = window.innerWidth;
+//     // graffitiWall.style.width = window.innerWidth;
+//     // graffitiWall.height = window.innerHeight;
+//     // graffitiWall.style.height = window.innerHeight;
+    // let oldCanvas = graffitiWall.toDataURL("image/png"); 
+    // let img = new Image(); 
+    // img.src = oldCanvas; 
+    // img.onload = function () { 
+    //   canvas.height += 100; ctx.drawImage(img, 0, 0); 
+    // }
+  }
+
+  document.getElementById("lightMode").onclick = function () {
+    document.getElementById("graffiti_wall").style.backgroundColor = "white"; 
+    ctx.strokeStyle = "black"; 
+    document.getElementById("swatch1").style.backgroundColor = "black";
+    document.getElementById("default").style.backgroundColor = "black";
+    document.getElementById('canvasImg').style.backgroundColor = "white";
+  }
+  document.getElementById("darkMode").onclick = function () {
+    document.getElementById("graffiti_wall").style.backgroundColor = "black"; 
+    ctx.strokeStyle = "white"; 
+    document.getElementById("swatch1").style.backgroundColor = "white";
+    document.getElementById("default").style.backgroundColor = "white";
+    document.getElementById('canvasImg').style.backgroundColor = "black";
+  }
 
 
 });
