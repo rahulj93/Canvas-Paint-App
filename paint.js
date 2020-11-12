@@ -111,14 +111,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("swatch1").style.backgroundColor = "black";
   };
 
-  // document.getElementById("brushSize").onsubmit = function() {
-  // let form = document.getElementById("brushSize");
-  // function handleForm(e) { 
-  //   e.preventDefault(); 
-  // }
-  // form.addEventListener('submit', handleForm);
-
-
   document.getElementById("smallBrush").onclick = function() {
     document.body.style.cursor = "auto";
     ctx.lineWidth = 1; 
@@ -130,48 +122,12 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.lineWidth = 9; 
   }
 
-
-// setBrushSize = () => {
-//   // e.preventDefault();
-//   let select = document.getElementById('brushSize'); 
-//   // let x = document.getElementById("brushSize").value; 
-//   let x = select.options[select.selectedIndex].value; 
-//   // document.brushSizeForm.action 
-//   alert(x); 
-//     // alert(x);
-//     if (x= "small") {
-//       console.log("small");
-//       ctx.lineWidth = 1; 
-//     } else if (x = "large") {
-//       console.log("large");
-//       ctx.lineWidth = 9; 
-//     } else {
-//       console.log("medium");
-//       ctx.lineWidth = 5; 
-//     }
-//     return false; 
-// // }
-
   window.onresize = function () {
-//     // alert("ayo don't do that");
     let painting = document.getElementById("content");
     let paintStyle = getComputedStyle(painting);
     graffitiWall.width = parseInt(paintStyle.getPropertyValue("width"));
     graffitiWall.height = parseInt(paintStyle.getPropertyValue("height")); 
     ctx.lineWidth = 5; 
-
-//     // ctx.scale(graffitiWall.width, graffitiWall.height);
-//     // var graffitiWall = document.getElementById('graffiti_wall');
-//     // graffitiWall.width = window.innerWidth;
-//     // graffitiWall.style.width = window.innerWidth;
-//     // graffitiWall.height = window.innerHeight;
-//     // graffitiWall.style.height = window.innerHeight;
-    // let oldCanvas = graffitiWall.toDataURL("image/png"); 
-    // let img = new Image(); 
-    // img.src = oldCanvas; 
-    // img.onload = function () { 
-    //   canvas.height += 100; ctx.drawImage(img, 0, 0); 
-    // }
   }
 
   document.getElementById("lightMode").onclick = function () {
