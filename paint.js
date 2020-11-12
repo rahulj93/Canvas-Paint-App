@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", function() {
   ctx.lineCap = 'round'; 
   // ctx.lineCap = 'butt'; 
   ctx.strokeStyle = 'black'; 
+  
+  document.getElementById("black").onclick = function() {
+    ctx.strokeStyle = 'black'; 
+    document.getElementById("swatch1").style.backgroundColor = "black";
+  }
 
   document.getElementById("red").onclick = function() {
     ctx.strokeStyle = 'red'; 
@@ -50,12 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let dataURL = graffitiWall.toDataURL(); 
     console.log(dataURL);
     document.getElementById('canvasImg').src = dataURL;
+    document.getElementById('canvasImg').style.border ="black";
     // let canvas = document.getElementById("graffiti_wall"); 
     // document.getElementById("graffiti_wall").src = canvas.toDataURL(); 
     // Canvas2Image.saveAsPNG(canvas); 
   }
   document.getElementById("download").onclick = function() {
-    window.open(graffitiWall.toDataURL('image/png')); 
+    // window.open(graffitiWall.toDataURL('image/png')); 
     var gh = graffitiWall.toDataURL('png');
     var a = document.createElement('a'); 
     a.href = gh; 
@@ -97,6 +103,63 @@ document.addEventListener("DOMContentLoaded", function() {
   //   alert('hello');
   //   // ctx.clearRect(0, 0, graffitiWall.width, graffitiWall.height);
   // }
+
+  // document.getElementById("brushSize").onsubmit = function() {
+
+
+  // let form = document.getElementById("brushSize");
+  // function handleForm(e) { 
+  //   e.preventDefault(); 
+  // }
+  // form.addEventListener('submit', handleForm);
+
+
+  document.getElementById("smallBrush").onclick = function() {
+    ctx.lineWidth = 1; 
+  }
+  document.getElementById("mediumBrush").onclick = function() {
+    ctx.lineWidth = 5; 
+  }
+  document.getElementById("largeBrush").onclick = function() {
+    ctx.lineWidth = 9; 
+  }
+
+  document.getElementById("smallEraser").onclick = function() {
+    ctx.strokeStyle = "white";
+    document.body.style.cursor = "crosshair";
+    ctx.lineWidth = 1; 
+  }
+  document.getElementById("mediumEraser").onclick = function() {
+    ctx.strokeStyle = "white";
+    document.body.style.cursor = "crosshair";
+    ctx.lineWidth = 5; 
+  }
+  document.getElementById("largeEraser").onclick = function() {
+    ctx.strokeStyle = "white";
+    document.body.style.cursor = "crosshair";
+    ctx.lineWidth = 9; 
+  }
+
+// setBrushSize = () => {
+//   // e.preventDefault();
+//   let select = document.getElementById('brushSize'); 
+//   // let x = document.getElementById("brushSize").value; 
+//   let x = select.options[select.selectedIndex].value; 
+//   // document.brushSizeForm.action 
+//   alert(x); 
+//     // alert(x);
+//     if (x= "small") {
+//       console.log("small");
+//       ctx.lineWidth = 1; 
+//     } else if (x = "large") {
+//       console.log("large");
+//       ctx.lineWidth = 9; 
+//     } else {
+//       console.log("medium");
+//       ctx.lineWidth = 5; 
+//     }
+//     return false; 
+// }
 
 
 });

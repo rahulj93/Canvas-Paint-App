@@ -10,9 +10,10 @@
   </head>
   <body>
     <div class="altMenu">
-      <button>File</button>
+      <!-- <button>File</button>
       <button>Edit</button>
-      <button>View</button>
+      <button>View</button> -->
+      <h1>Graffiti Wall</h1>
     </div> 
     <div class="main">
       <div class="toolbar">
@@ -28,20 +29,29 @@
           <!-- <i class="fa fa-square-o" aria-hidden="true"></i> -->
         </button>
         <!-- <button class="tools">/ line____ </button> -->
-          <button class="tools" id="eraser"><i class="fa fa-eraser"></i>Eraser </button>
+          <button class="tools" id="eraser"><i class="fa fa-eraser"></i>
+            
+          <p style="font-size: small;">Eraser</p>
+
+          </button>
           <button class="tools" id="save"> 
           <i class="fa fa-camera" aria-hidden="true"></i>
           <!-- <i class="icon-screenshot">  -->
         <!-- </i><i class='fas fa-save'></i>  -->
-        Snapshot</button>
+          <p style="font-size: small;">Snapshot</p>
+            
+        </button>
         <div class="remaining"></div>
-        <img id="canvasImg" alt="Right click to save this snapshot!">
+        <img id="canvasImg" style="border: auto black" alt="Right click to save this snapshot!">
         <!-- <a href="path/to/file" download>Click here to download</a> -->
         <div class="remaining"></div>
         <button class="tools" id="download">
-          </i><i class='fas fa-save'></i> Save     
+          </i><i class='fas fa-save'></i> 
+          <p style="font-size: small;">Save</p>
         </button>
-        <button class="tools" id="clearBoard"> <i class="fa fa-bomb" aria-hidden="true"></i>reset</button>
+        <button class="tools" id="clearBoard"> <i class="fa fa-bomb" aria-hidden="true"></i>
+        <p style="font-size: small;">Reset</p>
+        </button>
       </div>
       <div id="content">
         <canvas id="graffiti_wall"></canvas>
@@ -51,19 +61,58 @@
     <footer class="palette"> 
       <div class="box">
         <div class="swatch1" id="swatch1"></div>
-        <div class="swatch2"><i class="fa fa-paint-brush" aria-hidden="true"></i><i class="fa fa-eraser"></i></div>
+        <button class="swatch2" id="black"></button>
+        <!-- <div class="swatch2"><i class="fa fa-paint-brush" aria-hidden="true"></i><i class="fa fa-eraser"></i></div> -->
       </div>
       <div class="colors">
+          <label style="color: white"> Pick a paint color:
         <button class="red" id="red"></button>
         <button class="blue" id="blue"> </button>
         <button class="yellow" id="yellow"> </button>
         <button class="green" id="green"> </button>
-        <button class="tools" id="brushSize"> Brush size </button>
-        <input class="tools" type="number"></input>
-        <button class="tools" id="eraserSize"> Eraser size </button>
-        <input class="tools" type="number"></input>
+        <br></br> 
+
+          <label style="color: white"> Pick a brush size: 
+            <button id="smallBrush">Small</button>
+            <button id="mediumBrush">Medium</button>
+            <button id="largeBrush">Large</button>
+          </label>
+
+          <!-- <form name="brushSizeForm" onsubmit="setBrushSize()">
+            <label style="color: white"> Pick a brush size: 
+              <select name="brushSize" id="brushSize">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </label>
+            <input type="submit" value="Submit"> 
+          </form> -->
+          <br></br> 
+          
+          <label style="color: white"> Pick an eraser size: 
+            <button id="smallEraser">Small</button>
+            <button id="mediumEraser">Medium</button>
+            <button id="largeEraser">Large</button>
+          </label>
+
+        <!-- <label style="color: white"> Pick an eraser size: 
+          <select name="eraserSize" id="eraserSize">
+            <option value="1">Small</option>
+            <option value="2">Medium</option>
+            <option value="3">Large</option>
+          </select>
+        </label> -->
+
+        <!-- <button class="tools" id="brushSize"> Brush size </button>
+        <input class="tools" type="number"></input> -->
+
+        <!-- <button class="tools" id="eraserSize"> Eraser size </button>
+        <input class="tools" type="number"></input> -->
       </div> 
       <button class="tools" id="lightMode"> Light Mode </button>
+      <div style="width: 100px"></div>
+      <!-- <div style="width: 20px"></div> -->
       <button class="tools" id="darkMode"> Dark Mode </button>
     </footer>
   </body> 
